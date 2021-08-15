@@ -1,16 +1,16 @@
-package com.example.marvel
+package com.example.marvel.ui.list
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.marvel.home.HomeFragment
+import com.example.marvel.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val fragment = HomeFragment.newInstance()
+        val fragment = ListFragment.newInstance()
         openFragment(fragment)
     }
 
