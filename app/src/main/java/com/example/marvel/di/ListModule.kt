@@ -11,10 +11,8 @@ import retrofit2.create
 val listModule = module {
     viewModel {
         ListViewModel(get())
-        /*ListViewModel()*/
     }
 
     factory { MarvelRepository(charactersApiService = get()) }
     factory<CharactersApiService> { MarvelRetrofitBuilder.getRetrofitApi()!!.create(CharactersApiService::class.java) }
-    /*factory<CharactersApiService> { MarvelRetrofitBuilder.getRetrofitApi()?.create(CharactersApiService::class.java) }*/
 }

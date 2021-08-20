@@ -4,17 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvel.R
-import com.example.marvel.data.list.CharacterListItem
+import com.example.marvel.data.list.Character
 import com.example.marvel.data.list.CharactersRecyclerAdapter
 import com.example.marvel.ui.MainActivity
 import com.example.marvel.ui.detail.DetailFragment
-import com.example.marvel.ui.list.ListViewModel
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.character_item_row.view.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import kotlinx.android.synthetic.main.fragment_list.*
 
@@ -30,7 +26,7 @@ class ListFragment: Fragment() {
 
     private val viewModel: ListViewModel by viewModel()
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private var charactersList: ArrayList<CharacterListItem> = ArrayList<CharacterListItem>()
+    private var charactersList: ArrayList<Character> = ArrayList<Character>()
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

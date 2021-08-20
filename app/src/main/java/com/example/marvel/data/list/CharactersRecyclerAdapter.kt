@@ -11,7 +11,7 @@ import java.util.*
 
 
 class CharactersRecyclerAdapter(
-    var characters: ArrayList<CharacterListItem>
+    var characters: ArrayList<Character>
 ): RecyclerView.Adapter<CharactersRecyclerAdapter.CharacterHolder>(){
 
 
@@ -55,7 +55,7 @@ class CharactersRecyclerAdapter(
         }
 
 
-        fun bindItems(character: CharacterListItem) {
+        fun bindItems(character: Character) {
             itemView.name.text = character.name
             itemView.description.text = character.description
 

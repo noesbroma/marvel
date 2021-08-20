@@ -4,5 +4,5 @@ import com.google.gson.annotations.SerializedName
 
 data class CharacterDataResult (
     @SerializedName("total") val total: Int?,
-    @SerializedName("results") val results: ArrayList<CharacterListItem>
+    @SerializedName("results") val results: ArrayList<Character>
 )

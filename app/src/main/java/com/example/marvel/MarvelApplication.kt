@@ -1,6 +1,7 @@
 package com.example.marvel
 
 import android.app.Application
+import com.example.marvel.di.detailModule
 import com.example.marvel.di.listModule
 
 import org.koin.android.ext.koin.androidContext
@@ -19,7 +20,8 @@ class MarvelApplication : Application() {
             androidContext(this@MarvelApplication)
             modules(
                 listOf(
-                    listModule
+                    listModule,
+                    detailModule
                 )
             )
         }
