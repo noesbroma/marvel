@@ -1,9 +1,11 @@
-package com.example.marvel.ui.list
+package com.example.marvel.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.marvel.R
+import com.example.marvel.ui.detail.DetailFragment
+import com.example.marvel.ui.list.ListFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private fun openFragment(fragment: Fragment) {
+    fun openFragment(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.main_container, fragment)
         transaction.addToBackStack(null)

@@ -1,28 +1,25 @@
 package com.example.marvel.ui.list
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.marvel.data.list.CharacterListItem
 import com.example.marvel.data.list.GetCharactersListResult
 
 import com.example.marvel.data.list.MarvelRepository
 import kotlinx.coroutines.launch
 
 class ListViewModel(private val repository: MarvelRepository) : ViewModel() {
-/*class ListViewModel() : ViewModel() {*/
-    /*val onGetContentFileEvent = MutableLiveData<Boolean>()
-    val onGetContentFileError = MutableLiveData<Boolean>()*/
+    val onLoadCharactersEvent = MutableLiveData<ArrayList<CharacterListItem>>()
 
     fun getCharacters() {
         viewModelScope.launch {
-            val result = repository.getCharacters()
-
-            when (result) {
+            when (val result = repository.getCharacters()) {
                 is GetCharactersListResult.Ok -> {
-                    var a = ""
+                    onLoadCharactersEvent.value = result.getCharactersListResponse.data?.results
                 }
 
                 is GetCharactersListResult.Error -> {
-                    var a = ""
                 }
             }
         }
