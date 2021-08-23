@@ -12,6 +12,10 @@ repositories {
 }
 
 
+def localProperties = new Properties()
+localProperties.load(new FileInputStream(rootProject.file("local.properties")))
+
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
@@ -27,7 +31,11 @@ android {
     }
 
     buildTypes {
+        /*debug {
+            buildConfigField("String", "MARVEL_API_KEY", localProperties['MARVEL_API_KEY'])
+        }*/
         release {
+            //localProperties.getProperty("MARVEL_API_KEY")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
